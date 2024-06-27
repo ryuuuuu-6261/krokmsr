@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+/* common */
+
+.main2{
+  display: flex;
+
+}
+
+#map-container {
+    position: absolute;
+    width: 800px; /* 地図の幅に合わせて調整 */
+}
+
+#japan-map {
+    width: 100%;
+}
+
+
+#buttons-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.prefecture-button {
+    position: absolute;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.map_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 10%;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 1;
+}
+
+.content_wink {    /*ウインクましろ */
+    position: relative;
+    z-index: 1;
+    top: 640px; 
+    left: 485px;
+/*    text-align: center;*/
+    padding: 20px;
+    pointer-events: none; /
+}
+
+ .content_run {  /*ランニングましろ */
+    position: relative;
+    z-index: 2;
+    top: 0px; 
+    left: 387px;
+/*    text-align: center;*/
+    padding: 20px;
+    pointer-events: none; /
+}
+.overlay-text {  /*いざ、全国へ */
+    position: absolute;
+    top: 25%; /* 上端を中央に揃える */
+    left: 6%; /* 左端を中央に揃える */
+    transform: translate(-10%, -50%); /* 中央揃え */
+    background-color: rgba(255, 255, 255, 0); /* 背景色と透明度 */
+    color: #000000; /* テキスト色 */
+    font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', '游明朝','Yu Mincho', '游明朝体', 'YuMincho','ＭＳ Ｐ明朝', 'MS PMincho', serif;
+    /* font-family: 'Raleway', sans-serif; */
+    padding: 10px;
+    font-size: 70px;
+  }
+.overlay-text2 {
+    position: absolute;
+    top: 20%; /* 上端を中央に揃える */
+    left: 10%; /* 左端を中央に揃える */
+    transform: translate(-10%, -50%); /* 中央揃え */
+    background-color: rgba(255, 255, 255, 0); /* 背景色と透明度 */
+    color: #000000; /* テキスト色 */
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    font-size: 25px;
+}
+
+/* 各都道府県の位置を調整 */
+[data-prefecture="東京"] {top: 553px; left: 640px;}
+[data-prefecture="富山"] {top: 388px; left: 493px;}
+[data-prefecture="石川"] {top: 385px; left: 445px;}
+[data-prefecture="長野"] {top: 500px; left: 537px;}
+[data-prefecture="岐阜"] {top: 500px; left: 485px;}
+[data-prefecture="愛知"] {top: 610px; left: 493px;}
+[data-prefecture="奈良"] {top: 580px; left: 405px;}
+[data-prefecture="大阪"] {top: 570px; left: 365px;}
+[data-prefecture="兵庫"] {top: 500px; left: 325px;}
+[data-prefecture="高知"] {top: 648px; left: 220px;}
+[data-prefecture="宮崎"] {top: 590px; left: 148px;}
+[data-prefecture="鹿児島"] {top: 647px; left: 110px;}
+
+/* 他の都道府県の位置をここに追加 */
+
+[data-prefecture="ましろん知"] {
+    background-color: #f0ceeb; top: 660px; left: 500px;border-radius: 30px;
+    width: 360px;
+    height: 110px;
+    text-align: right;
+    padding: 20px;
+}

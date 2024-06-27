@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+/* common */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  background-color: #f0f8ff;
+}
+
+
+
+/**********************************　
+★★　ヘッダーの設定　★★
+************************************/
+
+header {
+  height: 60px;
+  width: 100%;
+  padding: 0px 15px;
+  background-color: rgba(255, 255, 255, 0.9);/*ヘッダーの背景の色を変更*/
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+}
+
+.logo {
+  font-size: 25px;
+}
+
+nav {
+  margin: 0 0 0 auto;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #000000;                       /*文字の色を変更*/
+  text-decoration: none;
+  display: block;
+  line-height: 60px;
+  padding: 0 20px;
+}
+
+.sp {
+  display: none;	/*ハンバーガーメニューのリスト（スマホ用）を非表示*/
+}
+
+
+/**********************************　
+以下、範囲が狭い場合の画面仕様
+************************************/
+
+@media (max-width: 900px) {
+ 
+  .pc {
+    display: none;	/*ヘッダーのグローバルメニューのリスト（パソコン用）を非表示*/
+  }
+
+  /**********************************　
+  以下、ハンバーガーメニューの設定　ここから
+  ************************************/
+  #hamburger {
+    background-color: transparent;  /*透明の背景*/
+    position: relative;             /*ハンバーガーの横線の位置を決めるための基準*/
+    cursor: pointer;                /*リンクを示すカーソルを表示（指差しマーク）*/
+    margin: 0 0 0 auto;             /*左側に余白を作り、ハンバーガーメニューを右端に配置*/
+    height: 60px;                   /*ヘッダーの高さと同じ60px*/
+    width: 60px;                    /*高さと同じ幅*/
+  }
+
+  .icon span {
+    position: absolute;             /*親要素である#hamburgerを基準に位置を指定*/
+    left: 15px;                     /*#hamburger内の左がら15pxに横線を配置（幅が60pxなので右からも15px）*/
+    width: 30px;                    /*横線の幅が30px*/
+    height: 4px;                    /*横線の高さが4px*/
+    background-color: rgb(60, 80, 150);      /*横線を白色*/
+    border-radius: 8px;             /*横線の両端の角に丸みを持たせる*/
+    transition: ease 0.75s;         /*変化の時間（easeは初期値）*/
+  }
+
+  .icon span:nth-of-type(1) {
+    top: 16px;
+  }
+  .icon span:nth-of-type(2) {
+    top: 28px;
+  }
+  .icon span:nth-of-type(3) {
+    bottom: 16px;
+  }
+  
+  .close span:nth-of-type(1) {
+    transform: rotate(45deg); /*反時計回りに45度回転*/
+    top: 28px;
+  }
+
+  .close span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .close span:nth-of-type(3) {
+      transform: rotate(-45deg); /*時計回りに45度回転*/
+      top: 28px;
+  }
+
+  .sp {
+    top: 60px;  /*headerの余白分*/
+    left: 0px;  /*headerの余白分　ヘッダーには左右に15px余白があるので、headerの子要素となる.smは15px分内側に設置されます。その余白を埋めるために左に寄せる。*/
+    position: absolute; /*絶対配置　top　leftからの位置を絶対配置する*/
+    z-index: 10;
+    width: 100%;
+    background-color: rgba(168, 20, 156, 0.9);
+  }
+  
+  ul {
+    flex-direction: column;	/*ulのflexboxを縦並びにする*/  
+  }
+  a {
+    text-align: center;	/*メニューリストの文字を中央寄せ*/
+    border-top: solid 0.5px rgba(204, 0, 0, 0.6);	/*リストの境目に白線 */
+  }
+  /**********************************　
+  以上、ハンバーガーメニューの設定　ここまで
+  ************************************/
+}
+
+
+/**********************************　
+★★　ヘッダーの設定　★★
+************************************/

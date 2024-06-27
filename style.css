@@ -1,0 +1,330 @@
+@charset "utf-8";
+
+/* common */
+
+body {
+  margin: 0;
+  font-family: verdana, sans-serif;
+}
+
+header {
+  display: flex;
+  padding: 0 16px;
+}
+
+.sp-menu {
+  margin-left: auto;
+}
+
+.sp-menu #open {
+  font-size: 32px;
+  line-height: 64px;
+  cursor: pointer;
+}
+.sp-menu #open.hide{
+  display: none;
+}
+
+.gif-image {
+  width: 100px; /* 幅を300ピクセルに設定 */
+  height: auto; /* 高さを自動で調整してアスペクト比を保つ */
+}
+
+main {
+  padding: 0 16px;
+}
+.contents{
+  height: 100%;
+  background:url(./0463/okumono_itigo26.png) ;
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
+  background-size:contain;                             /*    画像のサイズを指定    */
+  background-repeat : repeat;            /* x軸方向に素材を繰り返し使用する  */
+}
+
+.container {
+  width: 80%;
+  height: 200px;
+  margin: 16px auto;
+  /* outline: 8px solid red; */
+  overflow: hidden;
+  position: relative;
+}
+
+.mashiros{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    transition: transform .3s;
+ }
+
+.mashiros li {
+  height: 100%;
+  min-width: 100%;
+}
+
+.mashiros li img {
+  width: auto;
+  height: 100%;
+  /* width: 100%; */
+  object-fit: cover;
+  position: relative;
+}
+
+#prev,#next{
+  position: absolute;
+  top: 50%;
+  border: none;
+  background: rgba(0, 0, 0, .1);
+  color: #474747;
+  font-size: 24px;
+  font-weight: 100;
+  padding: 0 8px 4px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#prev:hover,#next:hover {
+  opacity: .8;
+}
+
+#prev{
+  left: 0;
+}
+
+#next{
+  right: 0;
+}
+
+.hidden{
+  display: none;
+}
+
+nav{
+  margin-top: 16px;
+  text-align: center;
+}
+
+nav button + button {
+  margin-left: 8px;
+}
+nav button{
+  border: none;
+  width: 16px;
+  height: 16px;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+nav .current{
+  background:#999;
+}
+/*************************************
+ ハンバーガーメニュー　ここから
+ *************************************/
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s;
+  z-index: 1;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay #close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.overlay ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay li {
+  margin-top: 24px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+}
+
+/* ハンバーガーメニューを押したときに順番に表示されるようにする */
+.overlay.show li:nth-child(1) {     /* １つめの要素を時間差で出す */
+  transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2) {     /* ２つ目の要素を時間差で出す */
+  transition-delay: .2s;
+}
+
+.overlay.show li:nth-child(3) {     /* ３つ目の要素を時間差で出す */
+  transition-delay: .3s;
+}
+
+.pc-menu {
+  display: none;
+}
+
+/*************************************
+ ハンバーガーメニュー　ここまで
+ *************************************/
+
+
+/*************************************
+ main　ここから
+ *************************************/
+
+/* hero */
+.hero {
+  /* background: skyblue url(bg.png) repeat-x center bottom; */
+  display:flex;
+  align-items: center;                         /* アイテムを先頭ににするを採用  */ 
+}
+
+.hero div{
+  flex:1;
+}
+
+.hero img{
+  margin-top: 0px;
+}
+
+.hero {
+  background-repeat : repeat-x;            /* x軸方向に素材を繰り返し使用する 
+ /*  background-position : center bottom;     /* 背景を中央・下つけにする  */ 
+  text-align: center;                         /* 文章を左右中央に揃えたい  */ 
+  padding-top: 0;
+  display: flex;
+}
+
+/*************************************
+ main　ここまで
+ *************************************/
+
+/*************************************
+横スクロール箇所　ここから
+ *************************************/
+
+
+/*************************************
+横スクロール箇所　ここまで
+ *************************************/
+
+
+
+
+ 
+
+/*************************************
+フッター　ここから
+ *************************************/
+/*フッターメニュー
+---------------------------------------------------------------------------*/
+/*メニューブロック全体*/
+.footer_cha{
+	text-align: center;	/*テキストを中央に*/
+
+}
+
+#footermenu {
+	margin: 0 !important;
+	padding: 20px;		/*ブロック内の余白*/
+	text-align: center;	/*テキストを中央に*/
+	font-size: 0.8rem;	/*文字サイズ。bodyのfont-sizeの80%です。*/
+  background-color: rgb(224, 224, 224);
+}
+
+/*メニュー１個あたり*/
+#footermenu li {
+	display: inline-block;	/*簡易的に横並びにする*/
+	padding: 0 10px;		/*上下、左右への余白*/
+}
+
+
+/*************************************
+フッター　ここまで
+ *************************************/
+
+
+
+
+/*************************************
+ 画面広い場合のメニュー　ここから
+ *************************************/
+@media (min-width: 600px) {
+  .pc-menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  .pc-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .pc-menu a {
+    display: block;
+    width: 140px;
+    line-height: 64px;
+    text-align: center;
+  }
+
+  .pc-menu a:hover {
+    background: #f2f2f2;
+  }
+
+  .sp-menu {
+    display: none;
+  }
+
+  
+  .container {
+    width: 80%;
+    height: 400px;
+    margin: 16px auto;
+    /* outline: 8px solid red; */
+    overflow: hidden;
+    position: relative;
+  }
+
+  .mashiros{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    transition: transform .3s;
+  }
+}
+
+
+
